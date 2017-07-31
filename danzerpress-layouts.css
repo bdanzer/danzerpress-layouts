@@ -327,7 +327,10 @@ Bootstrap %'s
 		max-width: calc(50% - 30px);
 	}
 	.danzerpress-one-fourth, 
-	.danzerpress-one-half {
+	.danzerpress-one-half,
+	.danzerpress-two-thirds.danzerpress-col-center,
+	.danzerpress-three-fourths.danzerpress-col-center,
+	.danzerpress-four-fifths.danzerpress-col-center {
 	    -ms-flex: 0 0 calc(100% - 30px);
 	    flex: 0 0 calc(100% - 30px);
 	    max-width: calc(100% - 30px);
