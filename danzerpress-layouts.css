@@ -257,6 +257,24 @@ Bootstrap %'s
     display: flex;
     flex-direction: column;
 }
+
+/*danzerpress-col-4*/
+.danzerpress-one-fourth {
+    -ms-flex: 0 0 calc(25% - 30px);
+    flex: 0 0 calc(25% - 30px);
+    max-width: calc(25% - 30px);
+    margin: 0 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.danzerpress-one-half {
+	-ms-flex: 0 0 calc(50% - 30px);
+	flex: 0 0 calc(50% - 30px);
+	max-width: calc(50% - 30px);
+    margin: 0 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
 /*.danzerpress-col-9*/
 .danzerpress-three-fourths {
 	-ms-flex: 0 0 calc(75% - 30px);
@@ -308,13 +326,11 @@ Bootstrap %'s
 		flex: 0 0 calc(50% - 30px);
 		max-width: calc(50% - 30px);
 	}
-}
-@media screen and (max-width: 1023px) {
-	.danzerpress-col-3,
-	.danzerpress-col-4,
-	.danzerpress-col-5 {
-		flex: 0 0 calc(50% - 30px);
-		max-width: calc(50% - 30px);
+	.danzerpress-one-fourth, 
+	.danzerpress-one-half {
+	    -ms-flex: 0 0 calc(100% - 30px);
+	    flex: 0 0 calc(100% - 30px);
+	    max-width: calc(100% - 30px);
 	}
 }
 @media screen and (max-width: 767px) {
