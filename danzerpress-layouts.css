@@ -35,6 +35,7 @@ p {
     margin-top: 0px;
     margin-bottom: 15px;
 }
+h5,
 .danzerpress-small-title {
     margin-top: 0px;
     text-transform: uppercase;
@@ -167,54 +168,47 @@ p {
 	justify-content: space-between;
 }
 
+/*Padding/Margin Fixes*/
+.danzerpress-col-margin-zero {
+    margin: 0 auto !important;
+}
+
 /*Layout Percentages*/
 .danzerpress-col-1 {
 	-ms-flex: 0 0 calc(100% - 30px);
 	flex: 0 0 calc(100% - 30px);
 	max-width: calc(100% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-col-2 {
     -ms-flex: 0 0 calc(50% - 30px);
     flex: 0 0 calc(50% - 30px);
     max-width: calc(50% - 30px);
     margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-col-3 {
 	-ms-flex: 0 0 calc(33.333333% - 30px);
 	flex: 0 0 calc(33.333333% - 30px);
 	max-width: calc(33.333333% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-col-4 {
 	-ms-flex: 0 0 calc(25% - 30px);
 	flex: 0 0 calc(25% - 30px);
 	max-width: calc(25% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-col-5 {
 	-ms-flex: 0 0 calc(20% - 30px);
 	flex: 0 0 calc(20% - 30px);
 	max-width: calc(20% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-col-6 {
 	-ms-flex: 0 0 calc(16.666667% - 30px);
 	flex: 0 0 calc(16.666667% - 30px);
 	max-width: calc(16.666667% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 /*
 Bootstrap %'s
@@ -236,16 +230,12 @@ Bootstrap %'s
 	flex: 0 0 calc(58.333333% - 30px);
 	max-width: calc(58.333333% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-one-third {
 	-ms-flex: 0 0 calc(33.333333% - 30px);
 	flex: 0 0 calc(33.333333% - 30px);
 	max-width: calc(33.333333% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 /*.danzerpress-col-8*/
 .danzerpress-two-thirds {
@@ -253,8 +243,6 @@ Bootstrap %'s
 	flex: 0 0 calc(66.666667% - 30px);
 	max-width: calc(66.666667% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 /*danzerpress-col-4*/
@@ -263,16 +251,12 @@ Bootstrap %'s
     flex: 0 0 calc(25% - 30px);
     max-width: calc(25% - 30px);
     margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 .danzerpress-one-half {
 	-ms-flex: 0 0 calc(50% - 30px);
 	flex: 0 0 calc(50% - 30px);
 	max-width: calc(50% - 30px);
     margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 /*.danzerpress-col-9*/
 .danzerpress-three-fourths {
@@ -280,8 +264,6 @@ Bootstrap %'s
 	flex: 0 0 calc(75% - 30px);
 	max-width: calc(75% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 /*.danzerpress-col-10*/
@@ -290,8 +272,6 @@ Bootstrap %'s
 	flex: 0 0 calc(83.333333% - 30px);
 	max-width: calc(83.333333% - 30px);
 	margin: 0 15px 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 /*Respsonsive*/
@@ -322,17 +302,26 @@ Bootstrap %'s
 	.danzerpress-col-3,
 	.danzerpress-col-4,
 	.danzerpress-col-5 {
+	    -ms-flex: 0 0 calc(50% - 30px);
 		flex: 0 0 calc(50% - 30px);
 		max-width: calc(50% - 30px);
 	}
-	.danzerpress-one-fourth, 
-	.danzerpress-one-half,
 	.danzerpress-two-thirds.danzerpress-col-center,
 	.danzerpress-three-fourths.danzerpress-col-center,
 	.danzerpress-four-fifths.danzerpress-col-center {
+	    -ms-flex: 0 0 calc(100%);
+	    flex: 0 0 calc(100%);
+	    max-width: calc(100%);
+		margin: 0px 0px 20px;
+	}
+	.danzerpress-one-third,
+	.danzerpress-two-thirds,
+	.danzerpress-one-fourth, 
+	.danzerpress-one-half {
 	    -ms-flex: 0 0 calc(100% - 30px);
 	    flex: 0 0 calc(100% - 30px);
 	    max-width: calc(100% - 30px);
+		margin: 0px 15px 20px;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -375,7 +364,10 @@ Bootstrap %'s
 	.danzerpress-col-3,
 	.danzerpress-col-4,
 	.danzerpress-col-5,
-	.danzerpress-one-third {
+	.danzerpress-one-third,
+	.danzerpress-two-thirds,
+	.danzerpress-one-fourth, 
+	.danzerpress-one-half {
 	    -ms-flex: 0 0 calc(100%);
 		flex: 0 0 100%;
 		max-width: 100%;
