@@ -52,12 +52,15 @@ h5,
 	background: white;
 }
 .danzerpress-button,
-.form-row input.woocommerce-Button.button {
+.form-row input.woocommerce-Button.button,
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
     cursor: pointer;
     background: #03c4eb;
     border: none;
     display: inline-block;
-    color: #fff;
+    color: #fff !important;
     letter-spacing: 1px;
     text-transform: uppercase;
     line-height: 1;
@@ -74,11 +77,12 @@ h5,
     margin-right: 15px;
 }
 .danzerpress-button-off {
-    background: #494949;
+    background: #494949 !important;
 }
 .danzerpress-button:hover {
-    background: #d5d5d5;
-    color: white;
+    background: #d5d5d5 !important;
+    color: white !important;
+    opacity: 1 !important;
 }
 .danzerpress-odd {
 	background: #f8f9f9 !important;
@@ -92,8 +96,12 @@ h5,
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    /*overflow: hidden;*/
+    /* overflow: hidden; */
     background: #f8f9f9;
+    padding: 20px 0;
+}
+.home .danzerpress-container-fw {
+    padding: 0;
 }
 .danzerpress-wrap {
 	width: 80%;
@@ -111,6 +119,7 @@ h5,
     flex: 0 0 calc(30% - 30px);
     margin-left: 30px;
     margin-bottom: 50px;
+    align-self: flex-start;
 }
 .danzerpress-sidebar-section {
     margin-bottom: 30px;
@@ -166,6 +175,9 @@ h5,
 }
 .danzerpress-justify-between {
 	justify-content: space-between;
+}
+.danzerpress-align-center {
+  align-self: center;
 }
 
 /*Padding/Margin Fixes*/
@@ -283,7 +295,8 @@ Bootstrap %'s
 	}
 }
 @media screen and (max-width: 1150px) {
-	.danzerpress-col-5 {
+	.danzerpress-col-5,
+  .danzerpress-col-6 {
 		-ms-flex: 0 0 calc(33.333333% - 30px);
 		flex: 0 0 calc(33.333333% - 30px);
 		max-width: calc(33.333333% - 30px);
@@ -292,7 +305,8 @@ Bootstrap %'s
 @media screen and (max-width: 1050px) {
 	.danzerpress-main-ws {
 		flex: 0 0 calc(100%);
-	}
+    margin-bottom: 50px;
+  }
 	.danzerpress-sidebar {
 		flex: 0 0 calc(100%);
 		margin: 0 0 50px;
@@ -301,7 +315,8 @@ Bootstrap %'s
 @media screen and (max-width: 1024px) {
 	.danzerpress-col-3,
 	.danzerpress-col-4,
-	.danzerpress-col-5 {
+	.danzerpress-col-5,
+  .danzerpress-col-6 {
 	    -ms-flex: 0 0 calc(50% - 30px);
 		flex: 0 0 calc(50% - 30px);
 		max-width: calc(50% - 30px);
@@ -340,9 +355,15 @@ Bootstrap %'s
 	.danzerpress-page-look {
 	    border: none;
 	}
-	.danzerpress-button {
-	    display: block;
+	.danzerpress-button,
+  .danzerpress-button, 
+  .form-row input.woocommerce-Button.button, 
+  button, input[type="button"], 
+  input[type="reset"], 
+  input[type="submit"] {
+	    display: block !important;
 	    margin-bottom: 20px;
+      width: 100%;
 	}
 	.danzerpress-button-left {
 		margin-right: 0px;
