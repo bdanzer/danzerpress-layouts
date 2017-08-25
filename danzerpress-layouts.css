@@ -98,7 +98,6 @@ input[type="submit"] {
     margin-right: -50vw;
     /* overflow: hidden; */
     background: #f8f9f9;
-    padding: 20px 0;
 }
 .home .danzerpress-container-fw {
     padding: 0;
@@ -184,6 +183,10 @@ input[type="submit"] {
 .danzerpress-col-margin-zero {
     margin: 0 auto !important;
 }
+/*Override Margins completely*/
+.danzerpress-zero {
+	margin: 0 !important;
+}
 
 /*Layout Percentages*/
 .danzerpress-col-1 {
@@ -197,6 +200,12 @@ input[type="submit"] {
     flex: 0 0 calc(50% - 30px);
     max-width: calc(50% - 30px);
     margin: 0 15px 20px;
+}
+.danzerpress-col-2-fix {
+	-ms-flex: 0 0 calc(50%);
+    flex: 0 0 calc(50%);
+    max-width: calc(50%);
+    line-height: 0px;
 }
 .danzerpress-col-3 {
 	-ms-flex: 0 0 calc(33.333333% - 30px);
@@ -284,6 +293,16 @@ Bootstrap %'s
 	flex: 0 0 calc(83.333333% - 30px);
 	max-width: calc(83.333333% - 30px);
 	margin: 0 15px 20px;
+}
+
+/*danzerpress-orders*/
+.danzerpress-order-1 {
+	order: 1;
+}
+@media screen and (max-width: 767px) {
+	.danzerpress-order-1 {
+		order: 0;
+	}
 }
 
 /*Respsonsive*/
@@ -382,6 +401,7 @@ Bootstrap %'s
 	/*Percentages*/
 	.danzerpress-col-1,
 	.danzerpress-col-2,
+	.danzerpress-col-2-fix,
 	.danzerpress-col-3,
 	.danzerpress-col-4,
 	.danzerpress-col-5,
