@@ -23,6 +23,8 @@ textarea {
 p {
     margin: 0 0 20px;
     font-size: 16px;
+    line-height: 26px;
+    color: grey;
 }
 .danzerpress-title {
     font-size: 40px;
@@ -41,11 +43,15 @@ h2.danzerpress-title {
     margin-bottom: 5px;
     margin-top: 20px;
 }
-h4 {
+h4,
+h3.widget-title {
     margin-top: 0px;
     text-transform: uppercase;
     font-size: 15px;
     margin-bottom: 0;
+}
+h3.widget-title {
+	font-size: 20px;
 }
 h5,
 .danzerpress-small-title {
@@ -76,7 +82,7 @@ input[type="submit"] {
     line-height: 15px !important;
     font-weight: 600 !important;
     font-family: Raleway !important;
-    border: 2px solid #CB4335 !important;
+    border: 2px solid #05C4EB !important;
     border-radius: 4px !important;
     letter-spacing: 1px !important;
     /* margin: 0 !important; */
@@ -88,10 +94,11 @@ input[type="submit"] {
     opacity: 1 !important;
     transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1) !important;
     transform-origin: 50% 50% 0 !important;
-    background: #CB4335 !important;
+    background: #05C4EB !important;
     color: white !important;
     text-transform: uppercase;
     display: inline-block;
+    text-align: center !important;
 }
 
 a.danzerpress-button-modern-transparent {
@@ -103,11 +110,11 @@ a.danzerpress-button-modern-transparent {
     font-weight: bold;
 }
 a.danzerpress-button-modern:hover {
-    background: #34e465 !important;
+    background: #242a2f !important;
     opacity: 1 !important;
     transition: .5s;
     color: white !important;
-    border-color: #34e465 !important;
+    border-color: #242a2f !important;
 }
 .danzerpress-button-left {
     margin-right: 15px;
@@ -163,6 +170,7 @@ div.wpcf7-validation-errors {
 	width: 80%;
 	margin: auto;
 	max-width: 1500px;
+	overflow: hidden;
 }
 .danzerpress-main-ns {
     flex: 0 0 calc(100%);
@@ -187,15 +195,25 @@ div.wpcf7-validation-errors {
 }
 .danzerpress-section {
 	background: white;
-	padding: 80px 0;
+	padding: 140px 0;
+	overflow: hidden;
 }
 .danzerpress-section-wrap {
 	width: 80%;
 	margin: auto;
 }
+.danzerpress-section-content h2, 
+.danzerpress-section-content p {
+    text-align: center;
+}
+.danzerpress-image-section .danzerpress-section-content p.image-section-p {
+    font-size: 18px;
+}
 .danzerpress-box {
     padding: 20px;
-    flex: 1;
+    flex: 1 0 auto;
+    /*Fixes issues in IE */
+    height: 100%;
 }
 .danzerpress-box p:last-child {
     margin: 0;
@@ -289,21 +307,6 @@ div.wpcf7-validation-errors {
 	max-width: calc(16.666667% - 30px);
 	margin: 0 15px 20px;
 }
-/*
-Bootstrap %'s
-12/12 = 1
-11/12 = 0.916667
-10/12 = 0.833333
-09/12 = 0.75
-08/12 = 0.666667
-07/12 = 0.583333
-06/12 = 50
-05/12 = 0.416667
-04/12 = 0.333333
-03/12 = 0.25
-02/12 = 0.166667
-01/12 = 0.083333
-*/
 .danzerpress-col-7 {
 	-ms-flex: 0 0 calc(58.333333% - 30px);
 	flex: 0 0 calc(58.333333% - 30px);
@@ -352,6 +355,27 @@ Bootstrap %'s
 	max-width: calc(83.333333% - 30px);
 	margin: 0 15px 20px;
 }
+
+/*Making everything 100% fixes issues in internet explorer*/
+.danzerpress-col-1,
+.danzerpress-col-2,
+.danzerpress-col-3,
+.danzerpress-col-4,
+.danzerpress-col-5,
+.danzerpress-col-7,
+.danzerpress-one-third,
+.danzerpress-two-thirds,
+.danzerpress-one-fourth,
+.danzerpress-one-half,
+.danzerpress-three-fourths,
+.danzerpress-four-fifths,
+.danzerpress-main-ns,
+.danzerpress-main-ws,
+.danzerpress-sidebar {
+	width: 100%;
+}
+
+
 
 /*danzerpress-orders*/
 .danzerpress-order-1 {
@@ -430,7 +454,7 @@ Bootstrap %'s
 	    letter-spacing: 2px;
 	}
 	div.danzerpress-section {
-        padding: 40px 0;
+        padding: 40px 0 !important;
     }
     h2.danzerpress-title {
         font-size: 22px;
@@ -501,6 +525,12 @@ Bootstrap %'s
     a.danzerpress-button-modern-transparent {
         /*display: block;*/
     }
+    .danzerpress-section-content h2, .danzerpress-section-content p {
+	    text-align: left;
+	}
+	.danzerpress-section-content p {
+		font-size: 14px !important;
+	}
 	.danzerpress-xs-1 {
 	    -ms-flex: 0 0 calc(100%);
 		flex: 0 0 100%;
