@@ -202,13 +202,6 @@ div.wpcf7-validation-errors {
 	width: 80%;
 	margin: auto;
 }
-.danzerpress-section-content h2, 
-.danzerpress-section-content p {
-    text-align: center;
-}
-.danzerpress-image-section .danzerpress-section-content p.image-section-p {
-    font-size: 18px;
-}
 .danzerpress-box {
     padding: 20px;
     flex: 1 0 auto;
@@ -546,7 +539,4 @@ div.wpcf7-validation-errors {
 	.danzerpress-button-left {
 		margin-right: 0px;
 	}
-
-
-
 }
