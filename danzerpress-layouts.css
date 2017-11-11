@@ -204,9 +204,9 @@ div.wpcf7-validation-errors {
 }
 .danzerpress-box {
     padding: 20px;
-    flex: 1 0 auto;
     /*Fixes issues in IE */
-    height: 100%;
+    flex: 1 0 auto;
+    min-height: 1px;
 }
 .danzerpress-box p:last-child {
     margin: 0;
@@ -437,7 +437,7 @@ div.wpcf7-validation-errors {
 @media screen and (max-width: 767px) {
 	/*Fonts*/
 	p {
-	    font-size: 14px;
+	    font-size: 14px !important;
 	}
 	h5 {
 	    font-size: 20px;
@@ -515,11 +515,13 @@ div.wpcf7-validation-errors {
         display: block;
         width: 100%;
     }
-    a.danzerpress-button-modern-transparent {
-        /*display: block;*/
-    }
-    .danzerpress-section-content h2, .danzerpress-section-content p {
-	    text-align: left;
+    .danzerpress-section-content h2, 
+    .danzerpress-section-content p {
+	    /*text-align: left;*/
+	}
+	a.danzerpress-button-modern-transparent {
+	    text-align: center;
+	    display: block;
 	}
 	.danzerpress-section-content p {
 		font-size: 14px !important;
