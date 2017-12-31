@@ -69,6 +69,9 @@ h5,
 .danzerpress-white {
 	background: white;
 }
+.danzerpress-grey {
+	background: rgb(248, 249, 249);
+}
 .danzerpress-button-modern, 
 .form-row input.woocommerce-Button.button, 
 input[type="button"], 
@@ -312,11 +315,23 @@ div.wpcf7-validation-errors {
 	max-width: calc(33.333333% - 30px);
 	margin: 0 15px 20px;
 }
+.danzerpress-one-third-fix {
+	-ms-flex: 0 0 calc(33.333333%);
+	flex: 0 0 calc(33.333333%);
+	max-width: calc(33.333333%);
+	margin: 0 15px 20px;
+}
 /*.danzerpress-col-8*/
 .danzerpress-two-thirds {
 	-ms-flex: 0 0 calc(66.666667% - 30px);
 	flex: 0 0 calc(66.666667% - 30px);
 	max-width: calc(66.666667% - 30px);
+	margin: 0 15px 20px;
+}
+.danzerpress-two-thirds-fix {
+	-ms-flex: 0 0 calc(66.666667%);
+	flex: 0 0 calc(66.666667%);
+	max-width: calc(66.666667%);
 	margin: 0 15px 20px;
 }
 
@@ -417,7 +432,9 @@ div.wpcf7-validation-errors {
 	}
 	.danzerpress-two-thirds.danzerpress-col-center,
 	.danzerpress-three-fourths.danzerpress-col-center,
-	.danzerpress-four-fifths.danzerpress-col-center {
+	.danzerpress-four-fifths.danzerpress-col-center,
+	.danzerpress-one-third-fix,
+	.danzerpress-two-thirds-fix {
 	    -ms-flex: 0 0 calc(100%);
 	    flex: 0 0 calc(100%);
 	    max-width: calc(100%);
