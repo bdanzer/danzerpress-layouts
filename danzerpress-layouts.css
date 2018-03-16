@@ -1,7 +1,49 @@
 /*--------------------------------------------------------------
-# DanzerPress Layouts
+======DanzerPress Layouts======
+Version: 3.0
+Author: https://danzerpress.com
+Documentation: https://layouts.danzerpress.com
+
+
+
+======Table of Contents======
+##Fonts
+##Styles
+	*Contact form 7*
+##Section Wraps
+##Override Colors
+##Override Display
+##Aspect Ratios
+	*Force 16:9 aspect ratio*
+	*Force 4:3 aspect ratio*
+	*Content inside*
+##Flex Directions
+##Flex Alignments
+##Flex Layouts
+##Base Column Settings
+##Flex Orders
+##Position Overrides
+##Queries
+	*Desktop Plus*
+	*Desktop*
+	*Tablet Landscape*
+	*Phone Portrait*
 --------------------------------------------------------------*/
-/*Fonts*/
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+/*--------------------------------------------------------------
+##Fonts
+--------------------------------------------------------------*/
 h1, 
 h2, 
 h3, 
@@ -61,23 +103,19 @@ h5,
     font-size: 22px;
 }
 
-/*Force 16:9 aspect ratio*/
-.danzerpress-16-9-container {
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    position: relative; /* If you want text inside of it */
-}
-.danzerpress-ar-items {
-	position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-}
 
-/*Styles*/
+
+/*--------------------------------------------------------------
+##Styles
+--------------------------------------------------------------*/
+::-moz-selection { 
+	background: #05C4EB; 
+	color: white;
+}
+::selection { 
+	background: #05C4EB; 
+	color: white;
+}
 .danzerpress-page-look {
 	background: white;
     border: 2px solid rgba(128, 128, 128, 0.33);
@@ -86,7 +124,10 @@ h5,
 	box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
 }
 .danzerpress-shadow-2 {
-	box-shadow: 0px 10px 25px #00000017;
+	box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.09019607843137255);
+}
+.danzerpress-shadow-3 {
+	box-shadow: 0 1px 1px rgba(0,0,0,.08);
 }
 .danzerpress-button-modern, 
 .form-row input.woocommerce-Button.button, 
@@ -131,7 +172,6 @@ input[type="submit"] {
     background: #494949;
     border-color: #494949;
 }
-
 /*Contact form 7*/
 span.wpcf7-not-valid-tip {
     text-transform: uppercase;
@@ -155,7 +195,11 @@ div.wpcf7-validation-errors {
     text-align: center;
 }
 
-/*Section wraps*/
+
+
+/*--------------------------------------------------------------
+##Section Wraps
+--------------------------------------------------------------*/
 .danzerpress-container-fw {
     width: 100vw;
     position: relative;
@@ -163,11 +207,12 @@ div.wpcf7-validation-errors {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    /* overflow: hidden; */
     background: #f8f9f9;
 }
-.home .danzerpress-container-fw {
-    padding: 0;
+.danzerpress-section {
+	background: white;
+	padding: 140px 0;
+	overflow: hidden;
 }
 .danzerpress-wrap {
 	width: 80%;
@@ -176,14 +221,8 @@ div.wpcf7-validation-errors {
 	overflow: hidden;
 	overflow: visible;
 }
-.danzerpress-section {
-	background: white;
-	padding: 140px 0;
-	overflow: hidden;
-}
 .danzerpress-box {
     padding: 20px;
-    /*Fixes issues in IE */
     flex: 1 0 auto;
     min-height: 1px;
 }
@@ -191,7 +230,11 @@ div.wpcf7-validation-errors {
     margin: 0;
 }
 
-/*Override colors*/
+
+
+/*--------------------------------------------------------------
+##Override Colors
+--------------------------------------------------------------*/
 .danzerpress-color-white {
 	color: white;
 }
@@ -205,12 +248,55 @@ div.wpcf7-validation-errors {
 	background: #f8f9f9;
 }
 
-/*Flex directions*/
+
+
+/*--------------------------------------------------------------
+##Override Display
+--------------------------------------------------------------*/
+.danzerpress-display {
+	display: block;
+}
+.danzerpress-no-display {
+	display: none;
+}
+
+
+
+/*--------------------------------------------------------------
+##Aspect Ratios
+--------------------------------------------------------------*/
+/*Force 16:9 aspect ratio*/
+.danzerpress-rectangle {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+}
+/*Force 4:3 aspect ratio*/
+.danzerpress-square {
+	width: 100%;
+    padding-top: 100%; /*4:3 Aspect Ratio*/
+    position: relative; 
+}
+/*Content inside*/
+.danzerpress-ab-items {
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/*--------------------------------------------------------------
+##Flex Directions
+--------------------------------------------------------------*/
 .danzerpress-flex-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
 }
 .danzerpress-flex-column {
 	display: flex;
@@ -218,7 +304,11 @@ div.wpcf7-validation-errors {
 	flex-wrap: wrap;
 }
 
-/*Justify Flex layout*/
+
+
+/*--------------------------------------------------------------
+##Flex Alignments
+--------------------------------------------------------------*/
 .danzerpress-justify-start {
 	justify-content: flex-start;
 }
@@ -238,163 +328,124 @@ div.wpcf7-validation-errors {
   align-self: center;
 }
 
-/*Layout Percentages*/
+
+
+/*--------------------------------------------------------------
+##Flex Layouts
+--------------------------------------------------------------*/
 .danzerpress-col-1 {
-	-ms-flex: 0 0 calc(100% - 30px);
-	flex: 0 0 calc(100% - 30px);
-	max-width: calc(100% - 30px);
-	margin: 0 15px 20px;
-}
-.danzerpress-col-1-fix {
-	-ms-flex: 0 0 calc(100%);
-    flex: 0 0 calc(100%);
-    max-width: calc(100%);
-    line-height: 0px;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
 }
 .danzerpress-col-2 {
-    -ms-flex: 0 0 calc(50% - 30px);
-    flex: 0 0 calc(50% - 30px);
-    max-width: calc(50% - 30px);
-    margin: 0 15px 20px;
-}
-.danzerpress-col-2-fix {
-	-ms-flex: 0 0 calc(50%);
-    flex: 0 0 calc(50%);
-    max-width: calc(50%);
-    line-height: 0px;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 .danzerpress-col-3 {
-	-ms-flex: 0 0 calc(33.333333% - 30px);
-	flex: 0 0 calc(33.333333% - 30px);
-	max-width: calc(33.333333% - 30px);
-	margin: 0 15px 20px;
-}
-.danzerpress-col-3-fix {
-	-ms-flex: 0 0 calc(33.333333%);
-    flex: 0 0 calc(33.333333%);
-    max-width: calc(33.333333%);
-    line-height: 0px;
+	-ms-flex: 0 0 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
 }
 .danzerpress-col-4 {
-	-ms-flex: 0 0 calc(25% - 30px);
-	flex: 0 0 calc(25% - 30px);
-	max-width: calc(25% - 30px);
-	margin: 0 15px 20px;
-}
-.danzerpress-col-4-fix {
-	-ms-flex: 0 0 calc(25%);
-    flex: 0 0 calc(25%);
-    max-width: calc(25%);
-    line-height: 0px;
+	-ms-flex: 0 0 25%;
+	flex: 0 0 25%;
+	max-width: 25%;
 }
 .danzerpress-col-5 {
-	-ms-flex: 0 0 calc(20% - 30px);
-	flex: 0 0 calc(20% - 30px);
-	max-width: calc(20% - 30px);
-	margin: 0 15px 20px;
-}
-.danzerpress-col-5-fix {
-	-ms-flex: 0 0 calc(20%);
-    flex: 0 0 calc(20%);
-    max-width: calc(20%);
-    line-height: 0px;
+	-ms-flex: 0 0 20%;
+	flex: 0 0 20%;
+	max-width: 20%;
 }
 .danzerpress-col-6 {
-	-ms-flex: 0 0 calc(16.666667% - 30px);
-	flex: 0 0 calc(16.666667% - 30px);
-	max-width: calc(16.666667% - 30px);
-	margin: 0 15px 20px;
-}
-.danzerpress-col-7 {
-	-ms-flex: 0 0 calc(58.333333% - 30px);
-	flex: 0 0 calc(58.333333% - 30px);
-	max-width: calc(58.333333% - 30px);
-	margin: 0 15px 20px;
+	-ms-flex: 0 0 16.666667%;
+	flex: 0 0 16.666667%;
+	max-width: 16.666667%;
 }
 .danzerpress-one-third {
-	-ms-flex: 0 0 calc(33.333333% - 30px);
-	flex: 0 0 calc(33.333333% - 30px);
-	max-width: calc(33.333333% - 30px);
-	margin: 0 15px 20px;
+	-ms-flex: 0 0 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
 }
-.danzerpress-one-third-fix {
-	-ms-flex: 0 0 calc(33.333333%);
-	flex: 0 0 calc(33.333333%);
-	max-width: calc(33.333333%);
-	margin: 0 15px 20px;
-}
-/*.danzerpress-col-8*/
 .danzerpress-two-thirds {
-	-ms-flex: 0 0 calc(66.666667% - 30px);
-	flex: 0 0 calc(66.666667% - 30px);
-	max-width: calc(66.666667% - 30px);
-	margin: 0 15px 20px;
+	-ms-flex: 0 0 66.666667%;
+	flex: 0 0 66.666667%;
+	max-width: 66.666667%;
 }
-.danzerpress-two-thirds-fix {
-	-ms-flex: 0 0 calc(66.666667%);
-	flex: 0 0 calc(66.666667%);
-	max-width: calc(66.666667%);
-	margin: 0 15px 20px;
-}
-
-/*danzerpress-col-4*/
 .danzerpress-one-fourth {
-    -ms-flex: 0 0 calc(25% - 30px);
-    flex: 0 0 calc(25% - 30px);
-    max-width: calc(25% - 30px);
-    margin: 0 15px 20px;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
 }
 .danzerpress-one-half {
-	-ms-flex: 0 0 calc(50% - 30px);
-	flex: 0 0 calc(50% - 30px);
-	max-width: calc(50% - 30px);
-    margin: 0 15px 20px;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;  
 }
-/*.danzerpress-col-9*/
 .danzerpress-three-fourths {
-	-ms-flex: 0 0 calc(75% - 30px);
-	flex: 0 0 calc(75% - 30px);
-	max-width: calc(75% - 30px);
-	margin: 0 15px 20px;
+	-ms-flex: 0 0 75%;
+	flex: 0 0 75%;
+	max-width: 75%;
 }
-
-/*.danzerpress-col-10*/
 .danzerpress-four-fifths {
-	-ms-flex: 0 0 calc(83.333333% - 30px);
-	flex: 0 0 calc(83.333333% - 30px);
-	max-width: calc(83.333333% - 30px);
-	margin: 0 15px 20px;
+	-ms-flex: 0 0 83.333333%;
+	flex: 0 0 83.333333%;
+	max-width: 83.333333%;
 }
 
-/*Layout overrides*/
-.danzerpress-col-center {
-	margin: 0 auto 20px !important;
-}
-.danzerpress-col-center-zero {
-    margin: 0 auto !important;
-}
-.danzerpress-zero {
-	margin: 0 !important;
-}
 
-/*Making everything 100% fixes issues in internet explorer*/
+
+/*--------------------------------------------------------------
+##Base Column Settings
+--------------------------------------------------------------*/
 .danzerpress-col-1,
 .danzerpress-col-2,
 .danzerpress-col-3,
 .danzerpress-col-4,
 .danzerpress-col-5,
-.danzerpress-col-7,
+.danzerpress-col-6,
 .danzerpress-one-third,
 .danzerpress-two-thirds,
 .danzerpress-one-fourth,
 .danzerpress-one-half,
 .danzerpress-three-fourths,
-.danzerpress-four-fifths {
+.danzerpress-four-fifths,
+.danzerpress-xl-1,
+.danzerpress-xl-2,
+.danzerpress-xl-3,
+.danzerpress-xl-4,
+.danzerpress-xl-5,
+.danzerpress-xl-6,
+.danzerpress-lg-1,
+.danzerpress-lg-2,
+.danzerpress-lg-3,
+.danzerpress-lg-4,
+.danzerpress-lg-5,
+.danzerpress-lg-6,
+.danzerpress-sm-1,
+.danzerpress-sm-2,
+.danzerpress-sm-3,
+.danzerpress-sm-4,
+.danzerpress-sm-5,
+.danzerpress-sm-6,
+.danzerpress-xs-1,
+.danzerpress-xs-2,
+.danzerpress-xs-3,
+.danzerpress-xs-4,
+.danzerpress-xs-5,
+.danzerpress-xs-6 {
 	width: 100%;
+	position: relative;
+	margin-bottom: 20px;
+	padding: 0 15px;
 }
 
 
-/*danzerpress-orders*/
+
+/*--------------------------------------------------------------
+##Flex Orders
+--------------------------------------------------------------*/
 .danzerpress-order-1 {
 	order: 1;
 }
@@ -404,73 +455,214 @@ div.wpcf7-validation-errors {
 	}
 }
 
-/*Respsonsive*/
+
+
+/*--------------------------------------------------------------
+##Position Overrides
+--------------------------------------------------------------*/
+.danzerpress-row-fix {
+	margin: 0 -15px 0;
+}
+.danzerpress-col-center {
+	margin: 0 auto 20px;
+}
+.danzerpress-col-center-zero {
+    margin: 0 auto;
+}
+.danzerpress-zero {
+	margin: 0;
+}
+.danzerpress-fix {
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+/*--------------------------------------------------------------
+##Queries
+--------------------------------------------------------------*/
+/*Desktop Plus*/
+@media screen and (min-width: 1450px) {
+	/*Override display xl*/
+	.danzerpress-display-xl {
+		display: block;
+	}
+	.danzerpress-no-display-xl {
+		display: none;
+	}
+	/*layout override*/
+	.danzerpress-xl-1 {
+	    -ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.danzerpress-xl-2 {
+	    -ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.danzerpress-xl-3 {
+	    -ms-flex: 0 0 33.3333%;
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+	}
+	.danzerpress-xl-4 {
+	    -ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.danzerpress-xl-5 {
+	    -ms-flex: 0 0 20%;
+		flex: 0 0 20%;
+		max-width: 20%;
+	}
+	.danzerpress-xl-6 {
+	    -ms-flex: 0 0 16.6667%;
+		flex: 0 0 16.6667%;
+		max-width: 16.6667%;
+	}
+}
+
+/*Desktop*/
 @media screen and (max-width: 1450px) {
+	/*Default wrap*/
 	.danzerpress-wrap  {
 	    width: 90%;
 	    margin: auto;
 	}
+	/*Override display lg*/
+	.danzerpress-display-lg {
+		display: block;
+	}
+	.danzerpress-no-display-lg {
+		display: none;
+	}
+	/*layout override*/
+	.danzerpress-lg-1 {
+	    -ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.danzerpress-lg-2 {
+	    -ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.danzerpress-lg-3 {
+	    -ms-flex: 0 0 33.3333%;
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+	}
+	.danzerpress-lg-4 {
+	    -ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.danzerpress-lg-5 {
+	    -ms-flex: 0 0 20%;
+		flex: 0 0 20%;
+		max-width: 20%;
+	}
+	.danzerpress-lg-6 {
+	    -ms-flex: 0 0 16.6667%;
+		flex: 0 0 16.6667%;
+		max-width: 16.6667%;
+	}
 }
+
 @media screen and (max-width: 1150px) {
 	.danzerpress-col-5,
   	.danzerpress-col-6 {
-		-ms-flex: 0 0 calc(33.333333% - 30px);
-		flex: 0 0 calc(33.333333% - 30px);
-		max-width: calc(33.333333% - 30px);
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
 	}
 }
+
+/*Tablet Landscape*/
 @media screen and (max-width: 1024px) {
+	/*Default Layout*/
 	.danzerpress-col-3,
-	.danzerpress-col-3-fix,
 	.danzerpress-col-4,
-	.danzerpress-col-4-fix,
 	.danzerpress-col-5,
-	.danzerpress-col-5-fix,
   	.danzerpress-col-6 {
-	    -ms-flex: 0 0 calc(50% - 30px);
-		flex: 0 0 calc(50% - 30px);
-		max-width: calc(50% - 30px);
-	}
-	.danzerpress-two-thirds,
-	.danzerpress-three-fourths,
-	.danzerpress-four-fifths,
-	.danzerpress-one-third-fix,
-	.danzerpress-two-thirds-fix,
-	.danzerpress-lg-1 {
-	    -ms-flex: 0 0 calc(100%);
-	    flex: 0 0 calc(100%);
-	    max-width: calc(100%);
-		margin: 0px 0px 20px;
+	    -ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
 	}
 	.danzerpress-one-third,
 	.danzerpress-two-thirds,
 	.danzerpress-one-fourth,
 	.danzerpress-three-fourths, 
-	.danzerpress-one-half {
-	    -ms-flex: 0 0 calc(100%);
-	    flex: 0 0 calc(100%);
-	    max-width: calc(100%);
-		margin: 0px 0px 20px;
+	.danzerpress-one-half,
+	.danzerpress-four-fifths {
+	    -ms-flex: 0 0 100%;
+	    flex: 0 0 100%;
+	    max-width: 100%;
+		padding: 0;
+	}
+	/*Override display md*/
+	.danzerpress-display-md {
+		display: block;
+	}
+	.danzerpress-no-display-md {
+		display: none;
+	}
+	/*Layout Override*/
+	.danzerpress-md-1 {
+	    -ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.danzerpress-md-2 {
+	    -ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.danzerpress-md-3 {
+	    -ms-flex: 0 0 33.3333%;
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+	}
+	.danzerpress-md-4 {
+	    -ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.danzerpress-md-5 {
+	    -ms-flex: 0 0 20%;
+		flex: 0 0 20%;
+		max-width: 20%;
+	}
+	.danzerpress-md-6 {
+	    -ms-flex: 0 0 16.6667%;
+		flex: 0 0 16.6667%;
+		max-width: 16.6667%;
 	}
 }
+
+/*Phone Landscape*/
 @media screen and (max-width: 767px) {
 	/*Fonts*/
 	p {
 	    font-size: 14px !important;
 	}
-	h5 {
+	h5,
+	.danzerpress-small-title {
 	    font-size: 20px;
 	}
 	.danzerpress-title {
 	    font-size: 30px;
 	    letter-spacing: 2px;
 	}
-	.danzerpress-section {
-        padding: 40px 0;
-    }
     h2.danzerpress-title {
         font-size: 22px;
         line-height: 29px;
+    }
+	/*Section-wraps*/
+	.danzerpress-section {
+        padding: 40px 0;
     }
 	/*Styles*/
 	.danzerpress-page-look {
@@ -485,50 +677,70 @@ div.wpcf7-validation-errors {
 	    margin-bottom: 20px;
       	width: 100%;
 	}
-	/*Section wraps*/
-	.danzerpress-wrap {
-        width: calc(100% - 60px);
-        margin: auto;
-    }
 	/*Percentages*/
 	.danzerpress-col-1,
-	.danzerpress-col-1-fix,
 	.danzerpress-col-2,
-	.danzerpress-col-2-fix,
 	.danzerpress-col-3,
-	.danzerpress-col-3-fix,
 	.danzerpress-col-4,
-	.danzerpress-col-4-fix,
 	.danzerpress-col-5,
-	.danzerpress-col-5-fix,
 	.danzerpress-one-third,
 	.danzerpress-two-thirds,
 	.danzerpress-one-fourth,
 	.danzerpress-three-fourths,
 	.danzerpress-one-half {
-	    -ms-flex: 0 0 calc(100%);
+	    -ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;
-		margin: 0px 0px 20px;
-	}
-	.danzerpress-md-2 {
-	    -ms-flex: 0 0 calc(50% - 30px);
-		flex: 0 0 calc(50% - 30px);
-		max-width: calc(50% - 30px);
-		margin: 0 15px 20px;
+		padding: 0;
 	}
 	/*Fixes*/
 	.danzerpress-col-center {
 		margin: inherit;
 	}
+	/*Override display sm*/
+	.danzerpress-display-sm {
+		display: block;
+	}
+	.danzerpress-no-display-sm {
+		display: none;
+	}
+	/*Layout Override*/
+	.danzerpress-sm-1 {
+	    -ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.danzerpress-sm-2 {
+	    -ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.danzerpress-sm-3 {
+	    -ms-flex: 0 0 33.3333%;
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+	}
+	.danzerpress-sm-4 {
+	    -ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.danzerpress-sm-5 {
+	    -ms-flex: 0 0 20%;
+		flex: 0 0 20%;
+		max-width: 20%;
+	}
+	.danzerpress-sm-6 {
+	    -ms-flex: 0 0 16.6667%;
+		flex: 0 0 16.6667%;
+		max-width: 16.6667%;
+	}
 }
+
+/*Phone Portrait*/
 @media screen and (max-width: 500px) {
 	/*Styles*/
-    .danzerpress-button-modern, 
-    .form-row input.woocommerce-Button.button, 
-    input[type="button"], 
-    input[type="reset"], 
-    input[type="submit"] {
+    .danzerpress-button-modern {
         display: block;
         width: 100%;
     }
@@ -539,16 +751,42 @@ div.wpcf7-validation-errors {
 	.danzerpress-button-left {
 		margin-right: 0px;
 	}
+	/*Override display xs*/
+	.danzerpress-display-xs {
+		display: block;
+	}
+	.danzerpress-no-display-xs {
+		display: none;
+	}
+	/*Layout Override*/
 	.danzerpress-xs-1 {
-	    -ms-flex: 0 0 calc(100%);
+	    -ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;
-		margin: 0px 0px 20px;
 	}
 	.danzerpress-xs-2 {
-	    -ms-flex: 0 0 calc(100%);
-		flex: 0 0 100%;
-		max-width: 100%;
-		margin: 0px 0px 20px;
+	    -ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.danzerpress-xs-3 {
+	    -ms-flex: 0 0 33.3333%;
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+	}
+	.danzerpress-xs-4 {
+	    -ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.danzerpress-xs-5 {
+	    -ms-flex: 0 0 20%;
+		flex: 0 0 20%;
+		max-width: 20%;
+	}
+	.danzerpress-xs-6 {
+	    -ms-flex: 0 0 16.6667%;
+		flex: 0 0 16.6667%;
+		max-width: 16.6667%;
 	}
 }
