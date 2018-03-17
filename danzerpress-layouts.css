@@ -4,8 +4,6 @@ Version: 3.0
 Author: https://danzerpress.com
 Documentation: https://layouts.danzerpress.com
 
-
-
 ======Table of Contents======
 ##Fonts
 ##Styles
@@ -23,6 +21,7 @@ Documentation: https://layouts.danzerpress.com
 ##Base Column Settings
 ##Flex Orders
 ##Position Overrides
+##Fixes
 ##Queries
 	*Desktop Plus*
 	*Desktop*
@@ -480,6 +479,21 @@ div.wpcf7-validation-errors {
 .danzerpress-fix {
 	padding: 0px;
 	margin: 0px;
+}
+
+
+
+/*--------------------------------------------------------------
+##Fixes
+--------------------------------------------------------------*/
+.danzerpress-wrap:before, 
+.danzerpress-wrap:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.danzerpress-lineheight-fix {
+	line-height: 0;
 }
 
 
