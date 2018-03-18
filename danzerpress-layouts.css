@@ -626,6 +626,14 @@ div.wpcf7-validation-errors {
 	.danzerpress-no-display-md {
 		display: none;
 	}
+	/*Force 16:9 aspect ratio*/
+	.danzerpress-rectangle-md {
+	    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	}
+	/*Force 4:3 aspect ratio*/
+	.danzerpress-square-md {
+	    padding-top: 100%; /*4:3 Aspect Ratio*/
+	}
 	/*Layout Override*/
 	.danzerpress-md-1 {
 	    -ms-flex: 0 0 100%;
@@ -723,6 +731,14 @@ div.wpcf7-validation-errors {
 	.danzerpress-no-display-sm {
 		display: none;
 	}
+	/*Force 16:9 aspect ratio*/
+	.danzerpress-rectangle-sm{
+	    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	}
+	/*Force 4:3 aspect ratio*/
+	.danzerpress-square-sm {
+	    padding-top: 100%; /*4:3 Aspect Ratio*/
+	}
 	/*Layout Override*/
 	.danzerpress-sm-1 {
 	    -ms-flex: 0 0 100%;
@@ -776,6 +792,14 @@ div.wpcf7-validation-errors {
 	}
 	.danzerpress-no-display-xs {
 		display: none;
+	}
+	/*Force 16:9 aspect ratio*/
+	.danzerpress-rectangle-xs {
+	    padding-top: 56.25%;
+	}
+	/*Force 4:3 aspect ratio*/
+	.danzerpress-square-xs {
+	    padding-top: 100%;
 	}
 	/*Layout Override*/
 	.danzerpress-xs-1 {
